@@ -6,11 +6,8 @@ async function login(event) {
   event.preventDefault();
   event.stopPropagation();
 
-  const emailElement = document.querySelector('#email');
-  const passwordElement = document.querySelector('#password');
-
-  const email = emailElement.value;
-  const password = passwordElement.value;
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
 
   console.log(email, password);
 
@@ -19,7 +16,7 @@ async function login(event) {
       email,
       password,
     });
-    const { token } = res.data;
+    const { token } = res.data; // const token = res.data.token;
     if (token === undefined) {
       return;
     }

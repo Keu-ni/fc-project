@@ -21,15 +21,10 @@ async function save(event) {
   event.stopPropagation();
   event.target.classList.add('was-validated');
 
-  const titleElement = document.querySelector('#title');
-  const messageElement = document.querySelector('#message');
-  const authorElement = document.querySelector('#author');
-  const urlElement = document.querySelector('#url');
-
-  const title = titleElement.value;
-  const message = messageElement.value;
-  const author = authorElement.value;
-  const url = urlElement.value;
+  const title = document.querySelector('#title').value;
+  const message = document.querySelector('#message').value;
+  const author = document.querySelector('#author').value;
+  const url = document.querySelector('#url').value;
 
   if (title === '' || message === '' || author === '' || url === '') {
     return;
